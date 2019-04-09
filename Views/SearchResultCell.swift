@@ -16,6 +16,7 @@ class SearchResultCell: UICollectionViewCell {
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
         iv.layer.cornerRadius = 12
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -41,7 +42,7 @@ class SearchResultCell: UICollectionViewCell {
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.backgroundColor = .lightGray
+        button.backgroundColor = UIColor(white: 0.95, alpha: 1)
         button.layer.cornerRadius = 16
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         button.heightAnchor.constraint(equalToConstant: 32).isActive = true
@@ -55,6 +56,11 @@ class SearchResultCell: UICollectionViewCell {
     func createScreenShotImageView() -> UIImageView {
         let iv = UIImageView()
         iv.backgroundColor = .blue
+        iv.layer.cornerRadius = 8
+        iv.clipsToBounds = true
+        iv.layer.borderWidth = 0.5
+        iv.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        iv.contentMode = .scaleAspectFill
         return iv
     }
     

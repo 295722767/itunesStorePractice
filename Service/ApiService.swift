@@ -11,7 +11,6 @@ import Foundation
 class Service {
     
     static let shared = Service()  // singleton
-    
     // fetchItunesApps from search page
     func fetchApps(completion: @escaping ([Result], Error?) -> ()) {
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
@@ -31,6 +30,6 @@ class Service {
                 print("Failed to decode json:", jsonErr)
                 completion([], jsonErr)
             }
-            }.resume()     // fires off the request   MOST IMPORTANT
+        }.resume()     // fires off the request   MOST IMPORTANT
     }
 }
